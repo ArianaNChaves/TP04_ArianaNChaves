@@ -22,7 +22,6 @@ public class PlayerHit : MonoBehaviour
         if (other.gameObject.CompareTag("Obstacle"))
         {
             Hit();
-            Time.timeScale = 0;
         }
     }
 
