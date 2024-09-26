@@ -5,8 +5,9 @@ using UnityEngine;
 
 public class Despawn : MonoBehaviour
 {
+    private const float DespawnTime = 8f;
     private void Start()
     {
-        Destroy(this.gameObject, 8f);
+        Destroy(this.gameObject, DespawnTime);
     }
 }

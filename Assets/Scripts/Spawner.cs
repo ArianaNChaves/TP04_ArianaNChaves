@@ -7,8 +7,8 @@ public class Spawner : MonoBehaviour
     [SerializeField] private GameObject[] prefabs;
     [SerializeField] private Vector2 spawnRange;
 
-    private float _minTimeToSpawn;
-    private float _maxTimeToSpawn;
+    private int _minTimeToSpawn;
+    private int _maxTimeToSpawn;
 
     private bool _gameOver;
 
@@ -16,8 +16,8 @@ public class Spawner : MonoBehaviour
     {
         _gameOver = false;
         
-        _minTimeToSpawn = spawnRange.x;
-        _maxTimeToSpawn = spawnRange.y;
+        _minTimeToSpawn = (int)spawnRange.x;
+        _maxTimeToSpawn = (int)spawnRange.y;
         
         StartCoroutine(SpawnCoroutine());
     }
@@ -26,7 +26,7 @@ public class Spawner : MonoBehaviour
     {
         while (!_gameOver)
         {
-            float randomTime = Random.Range(_minTimeToSpawn, _maxTimeToSpawn);
+            int randomTime = Random.Range(_minTimeToSpawn, _maxTimeToSpawn);
             Debug.Log(randomTime);
             yield return new WaitForSeconds(randomTime);
 

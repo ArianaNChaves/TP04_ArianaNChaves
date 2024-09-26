@@ -3,7 +3,8 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Obstacle
   layers:
   - Default
   - TransparentFX
@@ -47,15 +48,18 @@ TagManager:
   - name: Forest Background
     uniqueID: 2822952471
     locked: 0
+  - name: Back Lights
+    uniqueID: 577345077
+    locked: 0
   - name: Player
     uniqueID: 948192407
+    locked: 0
+  - name: Enemies
+    uniqueID: 735399793
     locked: 0
   - name: Foreground
     uniqueID: 838546383
     locked: 0
   - name: Front Lights
     uniqueID: 3120112447
-    locked: 0
-  - name: Back Lights
-    uniqueID: 577345077
     locked: 0
