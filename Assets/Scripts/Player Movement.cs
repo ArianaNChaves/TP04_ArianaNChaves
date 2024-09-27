@@ -4,8 +4,7 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    [SerializeField] private float movementSpeed;
-    [SerializeField] private float jumpForce;
+    [SerializeField] private PlayerData playerData;
     
     private Rigidbody2D _playerRigidbody;
     
@@ -28,7 +27,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void MovePlayer()
     {
-        _playerRigidbody.velocity = new Vector2(movementSpeed, _playerRigidbody.velocity.y);
+        _playerRigidbody.velocity = new Vector2(playerData.MovementSpeed, _playerRigidbody.velocity.y);
     }
 
     private void CheckAndHandleJump()
@@ -36,7 +35,7 @@ public class PlayerMovement : MonoBehaviour
         if (Input.GetButtonDown("Jump") && Mathf.Abs(_playerRigidbody.velocity.y) < JumpThreshold)
         {
             AudioManager.Instance.PlayEffect("Hit Sound");
-            _playerRigidbody.AddForce(new Vector2(0, jumpForce), ForceMode2D.Impulse);
+            _playerRigidbody.AddForce(new Vector2(0, playerData.JumpForce), ForceMode2D.Impulse);
         }
     }
 }

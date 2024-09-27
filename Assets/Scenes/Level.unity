@@ -5694,6 +5694,10 @@ PrefabInstance:
       propertyPath: uiManager
       value: 
       objectReference: {fileID: 751342368}
+    - target: {fileID: 6585559037694691030, guid: a0be4197333bced449ca786a1ac2976a, type: 3}
+      propertyPath: playerData
+      value: 
+      objectReference: {fileID: 11400000, guid: 8432800beac66fc4bac62e5078dcfc96, type: 2}
     - target: {fileID: 7010552692776795220, guid: a0be4197333bced449ca786a1ac2976a, type: 3}
       propertyPath: m_Name
       value: Player
