@@ -20,12 +20,12 @@ public class UiManager : MonoBehaviour
     
     [SerializeField] private GameObject panelSettings;
     [SerializeField] private GameObject panelMenu;
-    [SerializeField] private AudioManager audioManager;
 
 
     private void Start()
     {
         StopTime();
+        AudioManager.Instance.PlayMusic("Main Music");
         //BOTONES
         settingsButton.onClick.AddListener(OnSettingsButtonClicked);
         playButton.onClick.AddListener(OnPlayButtonClicked);
@@ -33,9 +33,9 @@ public class UiManager : MonoBehaviour
         //SLIDERS
         musicSlider.onValueChanged.AddListener(OnChangeMusicVolume);
         effectSlider.onValueChanged.AddListener(OnChangeEffectVolume);
+        
     }
-
-
+    
     private void OnDestroy()
     {
         settingsButton.onClick.RemoveAllListeners();
@@ -50,18 +50,24 @@ public class UiManager : MonoBehaviour
     
     private void OnSettingsButtonClicked()
     {
-        panelSettings.SetActive(true);
+        if (panelSettings.activeSelf)
+        {
+            panelSettings.SetActive(false); 
+        }
+        else
+        {
+            panelSettings.SetActive(true);
+        }
     }
 
     private void OnChangeMusicVolume(float volume)
     {
-        musicSlider.value = volume;
-        audioManager.SetMusicVolume(volume);
+        AudioManager.Instance.MusicVolume(volume);
     }
     private void OnChangeEffectVolume(float volume)
     {
-        effectSlider.value = volume;
-        audioManager.SetEffectVolume(volume);
+        AudioManager.Instance.SfxVolume(volume);
+        AudioManager.Instance.PlayEffect("Hit Sound");
     }
     
     private void StopTime()

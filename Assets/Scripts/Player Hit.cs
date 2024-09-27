@@ -27,6 +27,8 @@ public class PlayerHit : MonoBehaviour
 
     private void Hit()
     {
+        AudioManager.Instance.StopMusic();
+        AudioManager.Instance.PlayEffect("Defeat Sound");
         _spriteRenderer.color = _hitColor;
     }
 }
