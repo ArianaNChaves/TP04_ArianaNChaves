@@ -27,7 +27,6 @@ public class Spawner : MonoBehaviour
         while (!_gameOver)
         {
             int randomTime = Random.Range(_minTimeToSpawn, _maxTimeToSpawn);
-            Debug.Log(randomTime);
             yield return new WaitForSeconds(randomTime);
 
             SpawnPrefab();

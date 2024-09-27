@@ -2,6 +2,8 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+using UnityEngine.Serialization;
 using UnityEngine.UI;
 
 public class UiManager : MonoBehaviour
@@ -10,6 +12,7 @@ public class UiManager : MonoBehaviour
     
     [SerializeField] private Button settingsButton; 
     [SerializeField] private Button playButton;
+    [SerializeField] private Button returnButton;
     
     [Header("Sliders")]
     
@@ -20,6 +23,7 @@ public class UiManager : MonoBehaviour
     
     [SerializeField] private GameObject panelSettings;
     [SerializeField] private GameObject panelMenu;
+    [SerializeField] private GameObject panelLose;
 
 
     private void Start()
@@ -29,6 +33,7 @@ public class UiManager : MonoBehaviour
         //BOTONES
         settingsButton.onClick.AddListener(OnSettingsButtonClicked);
         playButton.onClick.AddListener(OnPlayButtonClicked);
+        returnButton.onClick.AddListener(OnReturnButtonClicked);
         
         //SLIDERS
         musicSlider.onValueChanged.AddListener(OnChangeMusicVolume);
@@ -46,6 +51,10 @@ public class UiManager : MonoBehaviour
     {
         PlayTime();
         panelMenu.SetActive(false);
+    } 
+    private void OnReturnButtonClicked()
+    {
+        SceneManager.LoadScene("Level");
     }
     
     private void OnSettingsButtonClicked()
@@ -68,6 +77,12 @@ public class UiManager : MonoBehaviour
     {
         AudioManager.Instance.SfxVolume(volume);
         AudioManager.Instance.PlayEffect("Hit Sound");
+    }
+
+    public void AppearLosePanel()
+    {
+        StopTime();
+        panelLose.SetActive(true);
     }
     
     private void StopTime()

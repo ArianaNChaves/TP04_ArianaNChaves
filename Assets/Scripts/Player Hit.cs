@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class PlayerHit : MonoBehaviour
 {
+    [SerializeField] private UiManager uiManager;
     private SpriteRenderer _spriteRenderer;
     private Color _defaultColor;
     private Color _hitColor;
@@ -22,6 +23,7 @@ public class PlayerHit : MonoBehaviour
         if (other.gameObject.CompareTag("Obstacle"))
         {
             Hit();
+            uiManager.AppearLosePanel();
         }
     }
 

@@ -17,13 +17,11 @@ public class AudioManager : MonoBehaviour
         if (Instance == null)
         {
             Instance = this;
-            DontDestroyOnLoad(gameObject);
         }
         else
         {
             Destroy(gameObject);
         }
-
     }
     public void PlayMusic(string musicName)
     {
@@ -63,6 +61,7 @@ public class AudioManager : MonoBehaviour
 
     public void StopMusic()
     {
+        _lastSong = "";
         musicSource.Stop();
     }
     public void Destroy()
