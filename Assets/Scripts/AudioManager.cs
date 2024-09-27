@@ -5,7 +5,7 @@ using UnityEngine;
 public class AudioManager : MonoBehaviour
 {
 
-
+//todo terminar de hacer el audio manager. Hacerlo singleton? o hacer eventos?
 
 
 
