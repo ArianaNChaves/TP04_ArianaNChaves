@@ -42,7 +42,6 @@ public class PlayerMovement : MonoBehaviour
     private void ChangeSpeed()
     {
         _speed += playerData.SpeedMultiplier;
-        Debug.Log(_speed);
     }
 
     private void MovePlayer()
