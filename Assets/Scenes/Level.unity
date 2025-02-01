@@ -444,10 +444,10 @@ RectTransform:
   - {fileID: 552461048}
   m_Father: {fileID: 1721688452}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 84.3454, y: -111.90393}
-  m_SizeDelta: {x: 128.6908, y: 47.93595}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &271694532
 MonoBehaviour:
@@ -1914,7 +1914,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &904597333
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2010,7 +2010,7 @@ GameObject:
   - component: {fileID: 925476335}
   - component: {fileID: 925476336}
   - component: {fileID: 925476337}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Floor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3043,7 +3043,7 @@ GameObject:
   - component: {fileID: 1078085012}
   - component: {fileID: 1078085011}
   - component: {fileID: 1078085013}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Floor (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3316,10 +3316,10 @@ RectTransform:
   - {fileID: 1598774492}
   m_Father: {fileID: 1721688452}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 84.3454, y: -43.967976}
-  m_SizeDelta: {x: 128.6908, y: 47.93595}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1193671345
 MonoBehaviour:
@@ -5779,6 +5779,10 @@ PrefabInstance:
       propertyPath: uiManager
       value: 
       objectReference: {fileID: 751342368}
+    - target: {fileID: 6585559037694691030, guid: a0be4197333bced449ca786a1ac2976a, type: 3}
+      propertyPath: rayLength
+      value: 0.65
+      objectReference: {fileID: 0}
     - target: {fileID: 6585559037694691030, guid: a0be4197333bced449ca786a1ac2976a, type: 3}
       propertyPath: playerData
       value: 

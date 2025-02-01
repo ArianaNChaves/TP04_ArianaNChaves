@@ -7,11 +7,12 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     [SerializeField] private PlayerData playerData;
+    [SerializeField] private float rayLength = 0.1f;
     
     private Rigidbody2D _playerRigidbody;
     private float _speed;
     
-    private const float JumpThreshold = 0.01f;
+    private const float JumpThreshold = 0.05f;
 
     private void Start()
     {
@@ -51,10 +52,27 @@ public class PlayerMovement : MonoBehaviour
 
     private void CheckAndHandleJump()
     {
-        if (Input.GetButtonDown("Jump") && Mathf.Abs(_playerRigidbody.velocity.y) < JumpThreshold)
+        if (Input.GetButtonDown("Jump") && IsGrounded())
         {
             AudioManager.Instance.PlayEffect("Hit Sound");
             _playerRigidbody.AddForce(new Vector2(0, playerData.JumpForce), ForceMode2D.Impulse);
         }
+    }
+
+    private bool IsGrounded()
+    {
+        Vector2 origin = transform.position;
+        Vector2 direction = Vector2.down;
+
+        RaycastHit2D hit = Physics2D.Raycast(origin, direction, rayLength, LayerMask.GetMask("Ground"));
+
+        return hit.collider != null;
+    }
+    private void OnDrawGizmos()
+    {
+        Gizmos.color = Color.red;
+        Vector2 origin = transform.position;
+        Vector2 direction = Vector2.down;
+        Gizmos.DrawRay(origin, direction * rayLength);
     }
 }
