@@ -5784,6 +5784,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 751342368}
     - target: {fileID: 6585559037694691030, guid: a0be4197333bced449ca786a1ac2976a, type: 3}
+      propertyPath: gravity
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 6585559037694691030, guid: a0be4197333bced449ca786a1ac2976a, type: 3}
       propertyPath: rayLength
       value: 0.7
       objectReference: {fileID: 0}

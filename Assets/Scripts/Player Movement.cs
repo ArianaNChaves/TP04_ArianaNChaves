@@ -8,12 +8,11 @@ public class PlayerMovement : MonoBehaviour
 {
     [SerializeField] private PlayerData playerData;
     [SerializeField] private float rayLength = 0.1f;
+    [SerializeField] private float gravity = 9.8f;
     
     private Rigidbody2D _playerRigidbody;
     private float _speed;
     
-    private const float JumpThreshold = 0.05f;
-
     private void Start()
     {
         _playerRigidbody = GetComponent<Rigidbody2D>();
@@ -56,6 +55,11 @@ public class PlayerMovement : MonoBehaviour
         {
             AudioManager.Instance.PlayEffect("Hit Sound");
             _playerRigidbody.AddForce(new Vector2(0, playerData.JumpForce), ForceMode2D.Impulse);
+        }
+
+        if (_playerRigidbody.velocity.y <= 0)
+        {
+            _playerRigidbody.velocity = new Vector2(_playerRigidbody.velocity.x, _playerRigidbody.velocity.y - gravity * Time.deltaTime);
         }
     }
 
