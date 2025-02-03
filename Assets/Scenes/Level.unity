@@ -5775,13 +5775,17 @@ PrefabInstance:
       propertyPath: m_SortingOrder
       value: 20
       objectReference: {fileID: 0}
+    - target: {fileID: 3811360253061412265, guid: a0be4197333bced449ca786a1ac2976a, type: 3}
+      propertyPath: m_Constraints
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 5939932484493893159, guid: a0be4197333bced449ca786a1ac2976a, type: 3}
       propertyPath: uiManager
       value: 
       objectReference: {fileID: 751342368}
     - target: {fileID: 6585559037694691030, guid: a0be4197333bced449ca786a1ac2976a, type: 3}
       propertyPath: rayLength
-      value: 0.65
+      value: 0.7
       objectReference: {fileID: 0}
     - target: {fileID: 6585559037694691030, guid: a0be4197333bced449ca786a1ac2976a, type: 3}
       propertyPath: playerData
